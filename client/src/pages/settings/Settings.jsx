@@ -10,7 +10,8 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:8000/images/"
+  let port=process.env.PORT || 8000;
+  const PF = `http://localhost:${port}/images/`
 
   const handleSubmit = async (e) => {
     e.preventDefault();

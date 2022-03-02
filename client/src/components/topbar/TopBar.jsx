@@ -5,7 +5,8 @@ import "./topbar.css";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:8000/images/"
+  let port=process.env.PORT || 8000;
+  const PF = `http://localhost:${port}/images/`
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
